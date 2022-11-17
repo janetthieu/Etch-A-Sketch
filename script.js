@@ -1,18 +1,34 @@
 const sketch = document.querySelector('#sketch');
 const reset = document.querySelector('#reset');
+const controlBtn = document.querySelectorAll('.control-btn');
+const rows = 5;
+const cols = 17;
 
-reset.addEventListener('click', () => {
-    sketch.textContent = 'Reset successful';
-})
+function addCell() {
+    cell = document.createElement('div');
+    sketch.appendChild(cell).className = 'cell';
+    etchASketch(cell);
+    resetBoard(cell);
+}
 
-function createSketch(rows, cols) {
-    sketch.style.setProperty('--grid-rows', rows);
-    sketch.style.setProperty('--grid-cols', cols);
+function createBoard(rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
-        const cell = document.createElement('div');
-        sketch.appendChild(cell).className = 'cell';
+        addCell();
+        sketch.style.setProperty('--grid-rows', rows);
+        sketch.style.setProperty('--grid-cols', cols);
     }
 }
 
-createSketch(12, 12);
+function etchASketch(c) {
+    c.addEventListener('pointerover', () => {
+        c.classList.add('etchedCell');
+    })
+}
 
+function resetBoard(c) {
+    reset.addEventListener('click', () => {
+        c.classList.remove('etchedCell');
+    })
+}
+
+createBoard(rows, cols);

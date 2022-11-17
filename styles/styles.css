@@ -1,12 +1,11 @@
-/* 
-#F3E6BC
-#F1C972
-#F5886B
-#72AE95
-#5A3226
-
-Color Palette by: https://www.colourlovers.com/lover/yoksel/loveNote
-*/
+:root {
+    --grid-rows: 1;
+    --grid-cols: 1;
+    --primary-color: #03797E;
+    --secondary-color: #F1F1F1;
+    --tertiary-color: #777;
+    --bg-color: #FFF4CF;
+}
 
 @font-face {
     font-family: "Retroking";
@@ -16,36 +15,49 @@ Color Palette by: https://www.colourlovers.com/lover/yoksel/loveNote
 body {
     text-align: center;
     font-family: Calibri;
-    background-color: #F3E6BC;
+    background-color: var(--bg-color);
 }
 
 h1 {
     margin: 24px 0;
     font-family: "Retroking", Calibri;
     font-size: 3rem;
+    color: var(--primary-color);
 }
 
 button {
+    position: relative;
     margin: 8px;
-    border: 1px solid #5A3226;
-    border-radius: 4px;
-    padding: 4px;
+    border: 0;
+    border-radius: 28px;
+    box-shadow: 2px 2px 6px var(--tertiary-color);
+    cursor: pointer;
+
+    background-color: var(--primary-color);
     font-family: Calibri;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+}
+
+button:active {
+    top: 3px;
+    left: 2px;
 }
 
 #reset {
-    padding: 4px 12px;
+    padding: 12px 20px;
 }
 
 #sketch {
     margin: 16px;
+    border-radius: 4px;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-gap: 1px;
-    background-color: #72AE95;
+    background-color: var(--primary-color);
 }
 
 .container {
@@ -54,13 +66,17 @@ button {
 
 .cell {
     width: 100%;
-    background-color: #FFF;
+    background-color: var(--secondary-color);
 }
 
 .cell:after {
     content: '';
     display: block;
     padding-bottom: 100%;
+}
+
+.etchedCell {
+    background-color: var(--tertiary-color);
 }
 
 .control-btn {
