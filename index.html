@@ -13,8 +13,11 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <button id="reset">Start Over</button>
-    <div class="container" id="sketch"></div>
-   
+    <div class="container" id="board"></div>
+    <div class="container" id="options">
+        <strong>Grid size</strong>: <span id="dimensions"></span>
+        <input type="range" min="1" max="40" value="16" class="slider" id="slider">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

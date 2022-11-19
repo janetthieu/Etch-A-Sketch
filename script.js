@@ -1,12 +1,13 @@
-const sketch = document.querySelector('#sketch');
+const board = document.querySelector('#board');
 const reset = document.querySelector('#reset');
-const controlBtn = document.querySelectorAll('.control-btn');
-const rows = 5;
-const cols = 17;
+const dimensions = document.querySelector('#dimensions');
+const slider = document.querySelector('#slider');
+let rows = parseInt(slider.value);
+let cols = parseInt(slider.value);
 
 function addCell() {
     cell = document.createElement('div');
-    sketch.appendChild(cell).className = 'cell';
+    board.appendChild(cell).className = 'cell';
     etchASketch(cell);
     resetBoard(cell);
 }
@@ -14,21 +15,36 @@ function addCell() {
 function createBoard(rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
         addCell();
-        sketch.style.setProperty('--grid-rows', rows);
-        sketch.style.setProperty('--grid-cols', cols);
+        board.style.setProperty('--grid-rows', rows);
+        board.style.setProperty('--grid-cols', cols);
     }
 }
 
-function etchASketch(c) {
-    c.addEventListener('pointerover', () => {
-        c.classList.add('etchedCell');
+function etchASketch(cell) {
+    cell.addEventListener('pointerover', () => {
+        cell.classList.add('etchedCell');
     })
 }
 
-function resetBoard(c) {
+function resetBoard(cell) {
     reset.addEventListener('click', () => {
-        c.classList.remove('etchedCell');
+        cell.classList.remove('etchedCell');
     })
+}
+
+function removeBoard(board) {
+    while (board.lastChild) {
+        board.removeChild(board.lastChild);
+    }
 }
 
 createBoard(rows, cols);
+dimensions.textContent = `${slider.value}x${slider.value}`;
+
+slider.oninput = function() {
+    removeBoard(board);
+    dimensions.textContent = `${this.value}x${this.value}`;
+    rows = parseInt(this.value);
+    cols = parseInt(this.value);
+    createBoard(rows, cols);
+}
