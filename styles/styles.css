@@ -1,16 +1,13 @@
 :root {
     --grid-rows: 1;
     --grid-cols: 1;
-    --primary-color: #03797E;
-    --secondary-color: #F1F1F1;
-    --tertiary-color: #777;
-    --bg-color: #FFF4CF;
+    --primary-color: rgb(3, 121, 126);
+    --secondary-color: rgb(241, 241, 241);
+    --tertiary-color: rgb(103, 174, 177);
+    --shadow-color: rgb(110, 110, 110);
+    --bg-color: rgb(255, 244, 207);
 }
 
-@font-face {
-    font-family: "Retroking";
-    src: url('/styles/fonts/Retroking.ttf') format('truetype');
-}
 
 body {
     text-align: center;
@@ -20,7 +17,7 @@ body {
 
 h1 {
     margin: 24px 0;
-    font-family: "Retroking", Calibri;
+    font-family: 'Oleo Script Swash Caps', Calibri;
     font-size: 3rem;
     color: var(--primary-color);
 }
@@ -30,7 +27,7 @@ button {
     margin: 8px;
     border: 0;
     border-radius: 28px;
-    box-shadow: 2px 2px 6px var(--tertiary-color);
+    box-shadow: 2px 2px 6px var(--shadow-color);
     cursor: pointer;
     background-color: var(--primary-color);
     font-family: Calibri;
@@ -58,6 +55,7 @@ button:active {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-gap: 1px;
+    box-shadow: 2px 2px 6px var(--shadow-color);
     background-color: var(--primary-color);
 }
 
