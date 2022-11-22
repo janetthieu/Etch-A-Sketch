@@ -8,7 +8,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="styles/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="styles/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="styles/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" type="text/css" href="styles/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,8 +23,12 @@
     <button id="reset">Start Over</button>
     <div class="container" id="board"></div>
     <div class="container" id="options">
-        <strong>Grid size</strong>: <span id="dimensions"></span>
-        <input type="range" min="1" max="40" value="16" class="slider" id="slider">
+        <div id="slider-wrapper">
+            <strong>Grid size</strong>: <span id="dimensions"></span>
+            <input type="range" min="1" max="32" value="16" id="slider">
+        </div>
+        <button id="original-color">Original Color</button>
+        <button id="random-color">Random Color</button>
     </div>
     <script src="script.js"></script>
 </body>

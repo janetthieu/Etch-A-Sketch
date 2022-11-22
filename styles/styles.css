@@ -8,7 +8,6 @@
     --bg-color: rgb(255, 244, 207);
 }
 
-
 body {
     text-align: center;
     font-family: Calibri;
@@ -42,6 +41,13 @@ button:active {
     left: 2px;
 }
 
+button:disabled {
+    top: 3px;
+    left: 2px;
+    box-shadow: none;
+    opacity: .5;
+}
+
 #reset {
     padding: 12px 20px;
 }
@@ -60,6 +66,10 @@ button:active {
 }
 
 #options {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
     color: var(--primary-color);
 }
 
@@ -78,6 +88,10 @@ button:active {
     padding-bottom: 100%;
 }
 
-.etchedCell {
+.etched-cell {
     background-color: var(--tertiary-color);
+}
+
+.reset-bg {
+    background-color: var(--secondary-color);
 }
