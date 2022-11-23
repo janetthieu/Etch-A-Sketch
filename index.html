@@ -21,15 +21,20 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <button id="reset">Start Over</button>
-    <div class="container" id="board"></div>
-    <div class="container" id="options">
-        <div id="slider-wrapper">
-            <strong>Grid size</strong>: <span id="dimensions"></span>
-            <input type="range" min="1" max="32" value="16" id="slider">
+    <div id="game-wrapper">
+        <div class="container" id="board"></div>
+        <div class="container" id="options">
+            <div id="slider-wrapper">
+                <strong>Grid size</strong>: <span id="dimensions"></span><br>
+                <input type="range" min="1" max="32" value="16" id="slider">
+            </div>
+            <button id="original-color">Original Color</button>
+            <button id="random-color">Random Color</button>
         </div>
-        <button id="original-color">Original Color</button>
-        <button id="random-color">Random Color</button>
     </div>
+    <footer>
+        <div id="copyright">© 2022 <a href="https://github.com/janetthieu">Janet Thieu</a></div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
