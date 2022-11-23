@@ -2,7 +2,7 @@
 
 ![Etch-A-Sketch on Desktop](/styles/desktop.png)
 
-A slightly different take on the classic Etch-A-Sketch! [Create your own masterpiece](janetthieu.github.io/Etch-A-Sketch/) by hovering over your desired cells. You have the option to keep the original color, choose randomly selected colors, or even change the grid size to be smaller or larger. Have fun with it!
+A slightly different take on the classic Etch-A-Sketch! [Create your own masterpiece](https://janetthieu.github.io/Etch-A-Sketch/) by hovering over your desired cells. You have the option to keep the original color, choose randomly selected colors, or even change the grid size to be smaller or larger. Have fun with it!
 
 ## The Making of Etch-A-Sketch
 The main goal of creating Etch-A-Sketch was to create the cells using JavaScript, instead of HTML. Thus, leading to many lessons learned in regards to accessing and changing properties (e.g., background color) of those cells and more.
